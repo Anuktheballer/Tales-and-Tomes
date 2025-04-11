@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tales & Tomes</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <div id="logo-title-container">
+            <h1 id="site-title">
+                <img src="images/tales-and-tomes-logo.png" alt="Tales & Tomes Logo" id="site-logo-inline">
+                Tales & Tomes
+            </h1>
+        </div>
+        <nav>
+            <a href="#" id="nav-home" class="nav-link">Home</a>
+            <a href="#" id="nav-reviews" class="nav-link">Book Reviews</a>
+            <a href="#" id="nav-chapters" class="nav-link">Story Chapters</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div id="home-view" class="view">
+            <section id="recent-reviews">
+                <h2>Latest Book Reviews</h2>
+                <div class="post-list" id="reviews-list-home">
+                    <p class="loading-message">Loading reviews...</p>
+                </div>
+            </section>
+            <hr> <section id="recent-chapters">
+                <h2>Latest Story Chapters</h2>
+                <div class="post-list" id="chapters-list-home">
+                    <p class="loading-message">Loading chapters...</p>
+                </div>
+            </section>
+        </div>
+
+        <div id="reviews-view" class="view hidden">
+             <h2>All Book Reviews</h2>
+             <div class="post-list" id="reviews-list-all">
+                <p class="loading-message">Loading reviews...</p>
+             </div>
+        </div>
+
+        <div id="chapters-view" class="view hidden">
+             <h2>All Story Chapters</h2>
+             <div class="post-list" id="chapters-list-all">
+                <p class="loading-message">Loading chapters...</p>
+             </div>
+         </div>
+
+        <div id="single-post-view" class="view hidden">
+            <p class="loading-message">Loading post...</p>
+        </div>
+
+         <div id="error-message-area" class="hidden" style="color: red; margin-top: 20px;"></div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tales & Tomes. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+/* --- CSS Variables (Custom Properties) --- */
+:root {
+    --cream-bg: #F8E9D3;
+    --dark-brown: #4E342E;
+    --teal: #4A8C87;
+    --teal-darker: #3B6F6A;
+    --gold-accent: #D4B784;
+    --white: #FFFFFF;
+    --muted-text: #6c757d;
+    --shadow-color: rgba(78, 52, 46, 0.15); /* Dark brown shadow */
+    --hover-bg-subtle: rgba(248, 240, 227, 0.1); /* Subtle cream for header hover */
+  
+    /* Consider adding font/spacing variables too */
+    --font-primary: 'Georgia', serif;
+    --base-font-size: 16px; /* Or use 1rem */
+    --line-height-base: 1.6;
+    --line-height-content: 1.7;
+    --border-radius: 4px;
+  }
+  
+  /* --- Global Styles & Reset --- */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  /* Inside styles/styles.css */
+  #site-logo {
+    height: 60px; /* Adjust this value as needed */
+    width: auto;   /* Keep aspect ratio */
+    display: block;
+  }
+  
+  #logo-link {
+      display: inline-block;
+      margin-bottom: 10px; /* Space below logo */
+  }
+  
+  /* Make sure header has text-align: center or adjust alignment */
+  header {
+    background-color: var(--dark-brown);
+    color: var(--cream-bg);
+    padding: 0.5rem 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+}
+
+#site-title {
+    font-size: 2.2rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#site-logo-inline {
+    height: 100px; /* Adjust size */
+    width: auto;
+    margin-right: 10px;
+}
+
+header nav {
+  /* Styles for your navigation */
+  margin-top: 15px; /* Add space above the navigation */
+}
+ body {
+    background-color: var(--cream-bg);
+    color: var(--dark-brown);
+    font-family: var(--font-primary);
+    line-height: var(--line-height-base);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: var(--base-font-size); /* Base size */
+  }
+  
+  .container { /* Not currently used in HTML, but good to have */
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  a {
+    color: var(--teal);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: var(--gold-accent);
+    text-decoration: underline;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevents bottom space */
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--dark-brown);
+    margin: 40px 0;
+  }
+  
+  /* --- Utility Classes --- */
+  .hidden {
+    display: none;
+  }
+  
+  .loading-message {
+      color: var(--muted-text);
+      font-style: italic;
+  }
+  
+  /* --- Header & Navigation --- */
+  header {
+    background-color: var(--dark-brown);
+    color: var(--cream-bg);
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.2rem; /* Consider using rem: 2.2rem */
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  header nav {
+    margin-top: 10px;
+  }
+  
+  header nav a {
+    color: var(--teal);
+    padding: 5px 10px;
+    margin: 0 15px;
+    border-radius: var(--border-radius);
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header nav a:hover {
+    color: var(--gold-accent);
+    background-color: var(--hover-bg-subtle);
+    text-decoration: none;
+  }
+  
+  /* Style for active link via JS */
+  header nav a.active {
+    color: var(--gold-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--teal);
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+  }
+  /* Add ARIA attribute styling for better accessibility feedback */
+  header nav a[aria-current="page"] {
+     /* You can add specific styles here, or rely on the .active class styles */
+     font-weight: bold; /* Example */
+  }
+  
+  
+  /* --- Main Content Area --- */
+  main {
+    flex-grow: 1;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px var(--shadow-color);
+  }
+  
+  /* Main headings within sections */
+  h2 {
+    color: var(--dark-brown);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--teal);
+    font-size: 1.8rem; /* Example, adjust as needed */
+  }
+  
+  /* --- Post Lists & Summaries --- */
+  .post-list article {
+    background-color: transparent;
+    padding: 20px 0;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed var(--teal);
+  }
+  
+  .post-list article:last-child {
+    border-bottom: none;
+  }
+  
+  .post-list h3 {
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+  }
+  
+  .post-list h3 a {
+    color: var(--dark-brown);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .post-list h3 a:hover {
+    color: var(--teal);
+    text-decoration: none;
+  }
+  
+  .post-date {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  /* --- Single Post View --- */
+  #single-post-view {
+    background-color: transparent;
+    padding: 15px 0;
+  }
+  
+  /* Use article tag for semantic structure */
+  #single-post-view article h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      border-bottom: none; /* Removed from h2 in single view */
+  }
+  
+  #single-post-view article .post-date {
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+  }
+  
+  #single-post-view article .post-content p,
+  #single-post-view article .post-content ul,
+  #single-post-view article .post-content ol,
+  #single-post-view article .post-content h3 {
+      margin-bottom: 1em;
+      line-height: var(--line-height-content);
+  }
+  
+  #single-post-view article .post-content ul,
+  #single-post-view article .post-content ol {
+      margin-left: 1.5em;
+      padding-left: 0.5em; /* Adjust spacing */
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: var(--teal);
+    color: var(--cream-bg);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .back-button:hover {
+    background-color: var(--teal-darker);
+    text-decoration: none;
+    color: var(--white);
+  }
+  
+  /* --- Footer --- */
+  footer {
+    background-color: var(--dark-brown);
+    color: var(--cream-bg);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+  }
+  
+  footer p {
+    margin-bottom: 5px;
+  }
+  
+  /* --- Responsive Design --- */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+    main {
+      padding: 20px 15px;
+    }
+    #single-post-view article h2 {
+      font-size: 1.7rem;
+    }
+     h2 { /* Adjust main section headings */
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.6rem;
+    }
+    header nav a {
+      margin: 0 8px;
+      padding: 5px;
+    }
+    .post-list h3 {
+      font-size: 1.2rem;
+    }
+    main {
+      margin: 10px auto;
+      padding: 15px 10px;
+    }
+    h2 {
+       font-size: 1.5rem;
+    }
+     #single-post-view article h2 {
+      font-size: 1.6rem;
+    }
+  }
